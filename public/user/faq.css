@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* PAGE */
+.contact-page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.contact-page h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* FAQ */
+.faq-section {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.faq-section h2 {
+    margin-bottom: 25px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.faq-item p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* FORM */
+.form-section {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.form-section h2 {
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff6600;
+}
+
+/* BUTTON */
+.btn-submit {
+    width: 150px;
+    padding: 12px;
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #e05500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .faq-section,
+    .form-section {
+        padding: 25px;
+    }
+}

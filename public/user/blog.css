@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* PAGE */
+.blog-page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.blog-page h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* GRID */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.blog-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* META */
+.blog-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.blog-meta span {
+    margin-right: 5px;
+}
+
+/* DESCRIPTION */
+.blog-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* READ MORE */
+.read-more {
+    margin-top: auto;
+    color: #ff6600;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .blog-card {
+        padding: 25px;
+    }
+}
