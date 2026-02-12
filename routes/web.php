@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/parent', function (){
     return view('admin.parent');
-});
+})->name('admin.parent');
 
 Route::prefix('bicycle_system/')->group(function() {
 

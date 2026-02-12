@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Discount;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -90,7 +92,6 @@ class ProductController extends Controller
             'brand_id' => 'required',
             'sku' => 'required',
             'tags' => 'required',
-            'name' => 'required'
         ]);
 
         $product = Product::findOrFail($id);
@@ -108,6 +109,47 @@ class ProductController extends Controller
                 ->with('success', 'Admin Product deleted successfully.');
         
     }
+
+    public function addToCart(Request $request)
+    {
+        $request->validate([
+            'product_id' => 'required|exists:products,id',
+            'quantity' => 'nullable|integer|min:1'
+        ]);
+
+        $quantity = $request->quantity ?? 1;
+
+        $user = Auth::user();
+
+        // attach or increment
+        if ($user->cartProducts()->where('product_id', $request->product_id)->exists()) {
+            $user->cartProducts()->updateExistingPivot($request->product_id, [
+                'quantity' => DB::raw('quantity + ' . $quantity)
+            ]);
+        } else {
+            $user->cartProducts()->attach($request->product_id, ['quantity' => $quantity]);
+        }
+
+        return response()->json(['success' => true]);
+    }
+
+    public function toggleFavorite(Request $request)
+    {
+        $productId = $request->product_id;
+        $user = Auth::user();
+
+        if ($user->favoriteProducts()->where('product_id', $productId)->exists()) {
+            $user->favoriteProducts()->detach($productId);
+            $status = 'removed';
+        } else {
+            $user->favoriteProducts()->attach($productId);
+            $status = 'added';
+        }
+
+        return response()->json(['success' => true, 'status' => $status]);
+    }
+
+
 
 
 }

@@ -1,4 +1,4 @@
-@extends('user.parent'
+@extends('user.parent')
 
 @section('styles')
 <link href="{{ asset('user/product.css') }}" rel="stylesheet">
