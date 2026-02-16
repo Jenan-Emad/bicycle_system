@@ -6,6 +6,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Service;
+use App\Models\Blog;
+use App\Models\Review;
+use App\Models\Order;
+use App\Models\Product;
+
 
 class User extends Authenticatable
 {
@@ -64,24 +70,24 @@ class User extends Authenticatable
     }
 
     // Cart
-    public function cartProducts()
-    {
-        return $this->belongsToMany(Product::class, 'cart_product')
-                    ->withPivot('quantity')
-                    ->withTimestamps();
-    }
+    // public function cartProducts()
+    // {
+    //     return $this->belongsToMany(Product::class, 'cart_product')
+    //                 ->withPivot('quantity')
+    //                 ->withTimestamps();
+    // }
 
-    // Favorites
-    public function favoriteProducts()
-    {
-        return $this->belongsToMany(Product::class, 'favorite_product')
-                    ->withTimestamps();
-    }
+    // // Favorites
+    // public function favoriteProducts()
+    // {
+    //     return $this->belongsToMany(Product::class, 'favorite_product')
+    //                 ->withTimestamps();
+    // }
 
-    // Compare
-    public function compareProducts()
-    {
-        return $this->belongsToMany(Product::class, 'compare_product')
-                    ->withTimestamps();
-    }
+    // // Compare
+    // public function compareProducts()
+    // {
+    //     return $this->belongsToMany(Product::class, 'compare_product')
+    //                 ->withTimestamps();
+    // }
 }

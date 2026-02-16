@@ -46,7 +46,12 @@
                 </div>
 
                 <div class="product-actions">
-                    <button class="btn cart">Add to Cart</button>
+                    <form method="POST" action="{{ route('user.addToCart', $product->id) }}">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                        <button class="btn cart">Add to Cart</button>
+
+                    </form>
                     <button class="btn favorite">♥</button>
                     <button class="btn compare">⇄</button>
                 </div>

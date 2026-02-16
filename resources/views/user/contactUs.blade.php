@@ -30,7 +30,7 @@
         <div class="contact-form-wrapper">
             <h2>Send Us a Message</h2>
 
-            <form action="{{ route('user.submitQuestion') }}" method="POST" class="contact-form">
+            <form action="{{ route('user.sendContact') }}" method="POST" class="contact-form">
                 @csrf
 
                 <div class="form-group">

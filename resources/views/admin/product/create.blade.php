@@ -63,6 +63,16 @@
                   </select>
                 </div>
 
+                <div class="form-group">
+                  <label for="sku">Product sku</label>
+                  <input type="text" class="form-control" id="sku" name="sku" placeholder="Enter product sku">
+                </div>
+
+                <div class="form-group">
+                  <label for="tags">Product tags</label>
+                  <input type="text" class="form-control" id="tags" name="tags" placeholder="Enter product tags">
+                </div>
+
                 </div>
                 <!-- /.card-body -->
 

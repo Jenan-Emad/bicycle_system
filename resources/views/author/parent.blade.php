@@ -12,13 +12,13 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route('author.viewBlogs') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Index</p>
             </a>
         </li>
         <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{route('author.createBlog')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>create</p>
             </a>
@@ -26,6 +26,11 @@
     </ul>
 </li>
 
+
+@endsection
+
+@section('content')
+<h1>Author Dashboard</h1>
 
 @endsection
 

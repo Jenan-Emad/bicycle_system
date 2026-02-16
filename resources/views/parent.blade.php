@@ -170,7 +170,7 @@
         </a>
       </li>
       <li>
-        <form method="POST" action="#">
+        <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit" class="btn btn-link nav-link" style="display: inline; padding: 0; border: none; background: none; cursor: pointer;">
                 Logout
